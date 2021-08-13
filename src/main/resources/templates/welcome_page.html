@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body style="width:800px; margin:0 auto;">
+<div sec:authorize="isAuthenticated()" class="text-center p-3" th:object="${users}">
+    <h2>Welcome <span th:text="${users.role}">User role</span></h2>
+    <a th:href="@{'/editUser/' + ${users.id}}">Edit user role</a>
+    <br/>
+    <br/>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout"/> <span th:text="${users.username}">Username</span>
+    </form>
+</div>
+</body>

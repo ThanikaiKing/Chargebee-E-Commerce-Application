@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    password:
+    url: jdbc:mysql://localhost:3306/UserDB
+    username: root
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 563188426806-ug131mq23ck71347fj917b1qe2r075rr.apps.googleusercontent.com
+            clientSecret: DhZvOW-HBjsokRbcSsuceV_q
+            scope:
+              - email
+              - profile

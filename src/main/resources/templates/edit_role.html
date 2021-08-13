@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div style="width:800px; margin:0 auto;">
+    <h1>Edit Role</h1>
+    <br/>
+    <form action="#" th:action="@{/saveUser}" th:object="${users}" method="post">
+        <p hidden><input type="text" th:field="*{id}" readonly="readonly"/></p>
+        <p hidden><input type="text" th:field="*{username}" readonly="readonly"/></p>
+        <p hidden><input type="text" th:field="*{email}" readonly="readonly"/></p>
+
+        <p>Please choose your role</p>
+        <input type="radio" id="Seller" name="role" value="Seller" th:field="*{role}" required>
+        <label for="Seller">Seller</label><br>
+        <input type="radio" id="Consumer" name="role" value="Consumer" th:field="*{role}" required>
+        <label for="Consumer">Consumer</label><br>
+        <p colspan="2">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </p>
+    </form>
+</div>
+</body>
+</html>
